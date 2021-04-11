@@ -1,0 +1,16 @@
+C:\Github\dnb\exercise\formCalculator\bin\Debug\netcoreapp3.1\formCalculator.exe
+C:\Github\dnb\exercise\formCalculator\bin\Debug\netcoreapp3.1\formCalculator.deps.json
+C:\Github\dnb\exercise\formCalculator\bin\Debug\netcoreapp3.1\formCalculator.runtimeconfig.json
+C:\Github\dnb\exercise\formCalculator\bin\Debug\netcoreapp3.1\formCalculator.runtimeconfig.dev.json
+C:\Github\dnb\exercise\formCalculator\bin\Debug\netcoreapp3.1\formCalculator.dll
+C:\Github\dnb\exercise\formCalculator\bin\Debug\netcoreapp3.1\formCalculator.pdb
+C:\Github\dnb\exercise\formCalculator\obj\Debug\netcoreapp3.1\formCalculator.csprojAssemblyReference.cache
+C:\Github\dnb\exercise\formCalculator\obj\Debug\netcoreapp3.1\formCalculator.Form1.resources
+C:\Github\dnb\exercise\formCalculator\obj\Debug\netcoreapp3.1\formCalculator.csproj.GenerateResource.cache
+C:\Github\dnb\exercise\formCalculator\obj\Debug\netcoreapp3.1\formCalculator.AssemblyInfoInputs.cache
+C:\Github\dnb\exercise\formCalculator\obj\Debug\netcoreapp3.1\formCalculator.AssemblyInfo.cs
+C:\Github\dnb\exercise\formCalculator\obj\Debug\netcoreapp3.1\formCalculator.csproj.CoreCompileInputs.cache
+C:\Github\dnb\exercise\formCalculator\obj\Debug\netcoreapp3.1\formCalculator.dll
+C:\Github\dnb\exercise\formCalculator\obj\Debug\netcoreapp3.1\formCalculator.pdb
+C:\Github\dnb\exercise\formCalculator\obj\Debug\netcoreapp3.1\formCalculator.genruntimeconfig.cache
+C:\Github\dnb\exercise\formCalculator\obj\Debug\netcoreapp3.1\formCalculator.Properties.Resources.resources
