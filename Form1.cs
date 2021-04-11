@@ -12,8 +12,7 @@ namespace formCalculator
 {
     public partial class Form1 : Form
     {
-        float currentNumber;
-        string operation;
+        string operation = "";
         public Form1()
         {
             InitializeComponent();
@@ -86,7 +85,7 @@ namespace formCalculator
 
         private void btnDot_Click(object sender, EventArgs e)
         {
-            calculateTextBox.Text = ",";
+            calculateTextBox.Text += ",";
         }
 
         private void btnRemoveLastChar_Click(object sender, EventArgs e)
@@ -106,52 +105,78 @@ namespace formCalculator
                 {
                     calculateTextBox.Text += "+";
                 }
-                operation = "addition";
+                operation = "+";
             }
         }
 
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            calculateTextBox.Text += "/";
+            if (calculateTextBox.Text != "")
+            {
+                calculate();
+                if (calculateTextBox.Text[calculateTextBox.Text.Length - 1].ToString() != "/")
+                {
+                    calculateTextBox.Text += "/";
+                }
+                operation = "/";
+            }
         }
 
         private void btnSubtract_Click(object sender, EventArgs e)
         {
-            calculateTextBox.Text += "-";
+            if (calculateTextBox.Text != "")
+            {
+                calculate();
+                if (calculateTextBox.Text[calculateTextBox.Text.Length - 1].ToString() != "-")
+                {
+                    calculateTextBox.Text += "-";
+                }
+                operation = "-";
+            }
         }
 
         private void btnMultiply_Click(object sender, EventArgs e)
         {
-            calculateTextBox.Text += "*";
+            if (calculateTextBox.Text != "")
+            {
+                calculate();
+                if (calculateTextBox.Text[calculateTextBox.Text.Length - 1].ToString() != "*")
+                {
+                    calculateTextBox.Text += "*";
+                }
+                operation = "*";
+            }
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
-
+            calculate();
         }
         private void calculate() {
-            Console.WriteLine("calc");
-            switch(this.operation)
+            int position = calculateTextBox.Text.IndexOf(operation);
+            if(position > 0 && position != calculateTextBox.Text.Length -1)
             {
-                case "addition":
-                    Console.WriteLine("addition");
-                    //calculateTextBox.Text += "addition";
-                    calculateTextBox.Text = currentNumber + calculateTextBox.Text;
-                    break;
-                case "subtract":
-                    Console.WriteLine("subtract");
-                    break;
-                case "divide":
-                    Console.WriteLine("divide");
-                    break;
-                case "multiply":
-                    Console.WriteLine("multiply");
-                    break;
-                default:
-                    break;
+                float firstNumber = float.Parse(calculateTextBox.Text.Substring(0, position));
+                float secondNumer = float.Parse(calculateTextBox.Text.Substring(position + 1));
+
+                switch (this.operation)
+                {
+                    case "+":
+                        calculateTextBox.Text = (firstNumber + secondNumer).ToString();
+                        break;
+                    case "-":
+                        calculateTextBox.Text = (firstNumber - secondNumer).ToString();
+                        break;
+                    case "/":
+                        calculateTextBox.Text = (firstNumber / secondNumer).ToString();
+                        break;
+                    case "*":
+                        calculateTextBox.Text = (firstNumber * secondNumer).ToString();
+                        break;
+                    default:
+                        break;
+                }
             }
-
         }
-
     }
 }
