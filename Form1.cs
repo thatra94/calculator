@@ -81,11 +81,18 @@ namespace formCalculator
         private void btnClearResult_Click(object sender, EventArgs e)
         {
             calculateTextBox.Text = "";
+            operation = "";
         }
 
         private void btnDot_Click(object sender, EventArgs e)
         {
-            calculateTextBox.Text += ",";
+            if(calculateTextBox.Text != "")
+            {
+                calculateTextBox.Text += ",";
+            } else
+            {
+                calculateTextBox.Text += "0,";
+            }
         }
 
         private void btnRemoveLastChar_Click(object sender, EventArgs e)
@@ -101,7 +108,7 @@ namespace formCalculator
             if (calculateTextBox.Text != "")
             {
                 calculate();
-                if (calculateTextBox.Text[calculateTextBox.Text.Length - 1].ToString() != "+")
+                if (CheckForOperator() == true)
                 {
                     calculateTextBox.Text += "+";
                 }
@@ -114,7 +121,7 @@ namespace formCalculator
             if (calculateTextBox.Text != "")
             {
                 calculate();
-                if (calculateTextBox.Text[calculateTextBox.Text.Length - 1].ToString() != "/")
+                if (CheckForOperator() == true)
                 {
                     calculateTextBox.Text += "/";
                 }
@@ -127,7 +134,7 @@ namespace formCalculator
             if (calculateTextBox.Text != "")
             {
                 calculate();
-                if (calculateTextBox.Text[calculateTextBox.Text.Length - 1].ToString() != "-")
+                if (CheckForOperator() == true)
                 {
                     calculateTextBox.Text += "-";
                 }
@@ -140,7 +147,7 @@ namespace formCalculator
             if (calculateTextBox.Text != "")
             {
                 calculate();
-                if (calculateTextBox.Text[calculateTextBox.Text.Length - 1].ToString() != "*")
+                if (CheckForOperator() == true)
                 {
                     calculateTextBox.Text += "*";
                 }
@@ -159,7 +166,7 @@ namespace formCalculator
                 float firstNumber = float.Parse(calculateTextBox.Text.Substring(0, position));
                 float secondNumer = float.Parse(calculateTextBox.Text.Substring(position + 1));
 
-                switch (this.operation)
+                switch (operation)
                 {
                     case "+":
                         calculateTextBox.Text = (firstNumber + secondNumer).ToString();
@@ -177,6 +184,15 @@ namespace formCalculator
                         break;
                 }
             }
+        }
+        public bool CheckForOperator()
+        {
+            string lastLetter = calculateTextBox.Text[calculateTextBox.Text.Length - 1].ToString();
+            if (lastLetter != "-" && lastLetter != "+" && lastLetter != "/" && lastLetter != "*")
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
